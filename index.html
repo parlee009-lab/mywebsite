@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowCare | Dermatology Clinic</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8fbfa;
+            color: #263b3a;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px #00000010;
+        }
+
+        .logo {
+            color: #188878;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #263b3a;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #188878;
+        }
+
+        .hero {
+            min-height: 440px;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            background: #e7f6f1;
+        }
+
+        .hero-text {
+            max-width: 560px;
+        }
+
+        .hero h1 {
+            font-size: 43px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #188878;
+        }
+
+        .hero p {
+            margin-bottom: 25px;
+            color: #526765;
+        }
+
+        .hero img {
+            width: 40%;
+            max-width: 390px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #188878;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            background: #10685d;
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #647674;
+            margin-bottom: 35px;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .about img {
+            width: 280px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h3 {
+            font-size: 25px;
+            color: #188878;
+            margin-bottom: 12px;
+        }
+
+        .services {
+            background: #edf7f4;
+        }
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #00000008;
+        }
+
+        .service-card .emoji {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            color: #188878;
+            margin-bottom: 10px;
+        }
+
+        .appointment-container {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px #0000000d;
+        }
+
+        .appointment-container input,
+        .appointment-container select,
+        .appointment-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 16px;
+            border: 1px solid #ccd9d5;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .appointment-container label {
+            font-weight: bold;
+        }
+
+        .appointment-container .btn {
+            width: 100%;
+        }
+
+        .contact {
+            text-align: center;
+            background: #e7f6f1;
+        }
+
+        footer {
+            background: #173f3a;
+            color: white;
+            padding: 22px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero img {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .service-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <div class="logo">GlowCare Clinic</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#appointment">Appointment</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Healthy Skin, <span>Beautiful You</span></h1>
+
+            <p>
+                Welcome to GlowCare Dermatology Clinic.
+                We provide professional skin, hair and nail
+                consultations with personalized care.
+            </p>
+
+            <a href="#appointment" class="btn">
+                Book an Appointment
+            </a>
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
+            alt="Doctor at a medical clinic">
+    </section>
+
+    <!-- About Doctor Section -->
+    <section id="about">
+        <h2 class="section-title">Meet Our Dermatologist</h2>
+        <p class="section-description">
+            Expert care for your skin and hair
+        </p>
+
+        <div class="about">
+            <img
+                src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80"
+                alt="Dermatologist portrait">
+
+            <div class="about-content">
+                <h3>Dr. Your Name</h3>
+
+                <p><strong>Dermatologist & Skin Specialist</strong></p>
+
+                <p>
+                    Our clinic focuses on understanding each patient's
+                    skin concerns and recommending suitable treatment
+                    options. We aim to provide a comfortable,
+                    professional and patient-friendly experience.
+                </p>
+
+                <p>
+                    <strong>Qualification:</strong> Add your verified
+                    medical qualifications here.
+                </p>
+
+                <p>
+                    <strong>Experience:</strong> Add verified years
+                    of clinical experience here.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+
+        <p class="section-description">
+            Skin and hair care services offered at our clinic
+        </p>
+
+        <div class="service-container">
+
+            <div class="service-card">
+                <div class="emoji">🌿</div>
+                <h3>Acne Treatment</h3>
+                <p>
+                    Consultation and care plans for acne,
+                    pimples and acne marks.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="emoji">✨</div>
+                <h3>Skin Care</h3>
+                <p>
+                    Assessment of pigmentation, dry skin
+                    and other common skin concerns.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="emoji">💇</div>
+                <h3>Hair Treatment</h3>
+                <p>
+                    Consultation for hair fall, scalp
+                    conditions and hair health.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="emoji">🩺</div>
+                <h3>Skin Diseases</h3>
+                <p>
+                    Evaluation of rashes, eczema and
+                    other skin conditions.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="emoji">☀️</div>
+                <h3>Sun Damage Care</h3>
+                <p>
+                    Guidance on sun protection and
+                    managing sun-related skin concerns.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="emoji">💅</div>
+                <h3>Nail Care</h3>
+                <p>
+                    Consultation for nail changes and
+                    common nail conditions.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment">
+        <h2 class="section-title">Book an Appointment</h2>
+
+        <p class="section-description">
+            Fill in your details to request a consultation
+        </p>
+
+        <div class="appointment-container">
+            <form action="#" method="get">
+
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required>
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required>
+
+                <label for="service">Select Service</label>
+                <select id="service" name="service" required>
+                    <option value="">Choose a service</option>
+                    <option>Acne Treatment</option>
+                    <option>Skin Care</option>
+                    <option>Hair Treatment</option>
+                    <option>Skin Diseases</option>
+                    <option>Nail Care</option>
+                </select>
+
+                <label for="date">Preferred Date</label>
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    required>
+
+                <label for="message">Additional Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Enter your message (optional)"></textarea>
+
+                <button type="submit" class="btn">
+                    Submit Appointment Request
+                </button>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+
+        <p>📍 Address: Add your clinic address here</p>
+        <p>📞 Phone: Add your clinic phone number</p>
+        <p>✉️ Email: Add your clinic email address</p>
+        <p>🕒 Working Hours: Monday – Saturday, 10 AM – 6 PM</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 GlowCare Dermatology Clinic.
+            All rights reserved.
+        </p>
+        <p>Designed for healthy skin and confident living.</p>
+    </footer>
+
+</body>
+</html>
